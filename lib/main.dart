@@ -5,6 +5,8 @@ import 'package:flutter_app_series/providers/tv_show_view_model.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     MultiProvider(
       providers: [
