@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_series/utils/app_assets.dart';
 import 'package:flutter_app_series/view/widgets/custom_drawer.dart';
 
 class BaseScreen extends StatelessWidget {
@@ -9,12 +10,7 @@ class BaseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [const Text('Amo Séries 🎬')],
-        ),
-      ),
+      appBar: AppBar(title: Image.asset(AppAssets.nameApp, height: 52)),
       drawer: CustomDrawer(),
       body: child,
     );

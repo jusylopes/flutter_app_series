@@ -21,7 +21,7 @@ class AppTheme {
     lightTheme = ThemeData(
       useMaterial3: true,
       colorScheme: colorSchemeLight,
-      fontFamily: GoogleFonts.lato().fontFamily,
+      fontFamily: GoogleFonts.roboto().fontFamily,
       appBarTheme: AppBarTheme(
         centerTitle: true,
         toolbarHeight: 100,
@@ -38,14 +38,14 @@ class AppTheme {
         shadowColor: colorSchemeLight.onSurface,
         elevation: 5,
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       ),
     );
 
     darkTheme = ThemeData(
       useMaterial3: true,
       colorScheme: colorSchemeDark,
-      fontFamily: GoogleFonts.lato().fontFamily,
+      fontFamily: GoogleFonts.roboto().fontFamily,
       appBarTheme: AppBarTheme(
         centerTitle: true,
         toolbarHeight: 100,
@@ -62,7 +62,7 @@ class AppTheme {
         shadowColor: colorSchemeDark.onSurface,
         elevation: 5,
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       ),
     );
   }

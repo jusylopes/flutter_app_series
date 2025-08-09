@@ -1,10 +1,8 @@
 import 'package:flutter_app_series/utils/base_screen.dart';
+import 'package:flutter_app_series/view/screens/fav_tv_show_screen.dart';
 import 'package:flutter_app_series/view/screens/tv_show_screen.dart';
-import 'package:flutter_app_series/view/screens/tv_show_form_screen.dart';
+import 'package:flutter_app_series/view/screens/tv_show_search.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
-
-import '../providers/tv_show_view_model.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -13,25 +11,17 @@ class AppRouter {
       ShellRoute(
         builder: (context, state, child) => BaseScreen(child: child),
         routes: [
+          GoRoute(path: '/', builder: (context, state) => FavTvShowScreen()),
           GoRoute(
-            name: 'home',
-            path: '/',
-            builder: (_, __) => const TvShowScreen(),
-          ),
-          GoRoute(
-            name: 'add',
-            path: '/add',
-            builder: (_, __) => const TvShowFormScreen(),
-          ),
-          GoRoute(
-            name: 'edit',
-            path: '/edit/:index',
+            path: '/tvshow/:id',
             builder: (context, state) {
-              final index = int.parse(state.pathParameters['index']!);
-              return TvShowFormScreen(
-                tvShow: context.read<TvShowViewModel>().tvShows[index],
-              );
+              final id = int.parse(state.pathParameters['id']!);
+              return TvShowScreen(id: id);
             },
+          ),
+          GoRoute(
+            path: '/search',
+            builder: (context, state) => TvShowSearchScreen(),
           ),
         ],
       ),

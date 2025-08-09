@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_series/providers/app_theme_view_model.dart';
+import 'package:flutter_app_series/utils/app_assets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -20,21 +20,18 @@ class CustomDrawer extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Amo Séries 🎬',
-                    style: GoogleFonts.lobster(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  Image.asset(AppAssets.nameApp, height: 52),
                   SizedBox(height: 16),
                   ElevatedButton.icon(
                     onPressed: context.read<AppThemeViewModel>().switchTheme,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.onSurface,
+                      foregroundColor: Theme.of(context).colorScheme.surface,
+                    ),
                     icon:
-                        context.watch<AppThemeViewModel>().isDark
-                            ? Icon(Icons.wb_sunny_rounded, size: 24)
-                            : Icon(Icons.nightlight_round_sharp, size: 24),
+                        !context.watch<AppThemeViewModel>().isDark
+                            ? Icon(Icons.light_mode_rounded, size: 24)
+                            : Icon(Icons.dark_mode_rounded, size: 24),
                     label: Text('Mudar Tema'),
                   ),
                 ],
@@ -42,19 +39,19 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Home'),
+            leading: Icon(Icons.favorite),
+            title: Text('Favoritas'),
             onTap: () {
               Navigator.of(context).pop();
               context.go('/');
             },
           ),
           ListTile(
-            leading: Icon(Icons.add),
-            title: Text('Adicionar série'),
+            leading: Icon(Icons.search),
+            title: Text('Buscar'),
             onTap: () {
               Navigator.of(context).pop();
-              context.go('/add');
+              context.go('/search');
             },
           ),
         ],

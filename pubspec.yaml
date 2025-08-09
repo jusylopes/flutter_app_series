@@ -1,6 +1,6 @@
 name: flutter_app_series
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 environment:
   sdk: ^3.7.2
@@ -9,41 +9,33 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_html: ^3.0.0
   go_router: ^16.1.0
   google_fonts: ^6.3.0
+  http: ^1.5.0
+  icons_launcher: ^3.0.1
+  path: ^1.9.1
   provider: ^6.1.5
+  sqflite: ^2.4.2
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 
+icons_launcher:
+  image_path: 'assets/logo/logo.png'
+  platforms:
+    android:
+      enable: true
+      image_path: 'assets/logo/logo.png'
+      adaptive_background_image: 'assets/logo/ic_background.png'
+      adaptive_foreground_image: 'assets/logo/ic_foreground.png'
+      adaptive_round_image: 'assets/logo/ic_logo_round.png'
+
 flutter:
   uses-material-design: true
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  assets:
+    - assets/
+    - assets/images/
+    - assets/logo/
