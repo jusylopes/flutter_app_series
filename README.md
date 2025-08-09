@@ -1,7 +1,7 @@
 # 🍿 Séries App
 ### Sobre o projeto
 
- O aplicativo realiza operações de create, read, update, delete para séries usando provider para gerenciar estado 🚀🚀🚀🚀🚀🚀. 
+ O aplicativo realiza integração com API, persistência em SQL e gerenciamento de estado com Provider 🚀🚀🚀
 
 
 ## 🔧 Instalação
